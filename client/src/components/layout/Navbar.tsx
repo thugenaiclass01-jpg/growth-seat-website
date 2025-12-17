@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Menu, X, ShoppingBag, Search } from "lucide-react";
+import { Menu, X, ShoppingBag, Search, Armchair, Leaf } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -24,24 +24,23 @@ export function Navbar() {
       {/* Main Nav */}
       <div className="container mx-auto px-4 h-20 flex items-center justify-between gap-8">
         {/* Logo - Bold Blue */}
-        <Link href="/">
-          <a className="flex-shrink-0">
-             {/* Text Logo mimicking IKEA box logo style */}
-            <div className="flex flex-col leading-none font-black select-none group cursor-pointer">
-              <div className="flex gap-1">
-                <span className="bg-primary text-white px-2 py-1 rounded-sm shadow-sm transform group-hover:-translate-y-0.5 transition-transform duration-300">椅</span>
-                <span className="bg-accent text-primary px-2 py-1 rounded-sm shadow-sm transform group-hover:translate-y-0.5 transition-transform duration-300">件</span>
-              </div>
-              <div className="text-primary text-right text-sm font-bold tracking-[0.2em] border-t-2 border-primary mt-1 pt-0.5">
-                鍾情
-              </div>
-            </div> 
-            {/* Or keep original name but styled */}
-            {/* <div className="font-display font-black text-3xl tracking-tighter text-primary">
-              椅件鍾情
-            </div> */}
-          </a>
-        </Link>
+            <Link href="/">
+              <a className="flex items-center gap-3 group">
+                <img 
+                  src="/images/logo.jpeg" 
+                  alt="椅件鍾情 Logo" 
+                  className="w-14 h-14 object-contain mix-blend-multiply" 
+                />
+                <div className="flex flex-col">
+                  <span className="text-2xl font-display font-bold tracking-tight text-[#2c3e32] leading-none">
+                    椅件鍾情
+                  </span>
+                  <span className="text-[10px] text-[#5c7c64] tracking-[0.15em] font-medium uppercase mt-0.5">
+                    Growth Seat
+                  </span>
+                </div>
+              </a>
+            </Link>
 
         {/* Search Bar - Prominent in IKEA style */}
         <div className="hidden md:flex flex-1 max-w-xl relative">
