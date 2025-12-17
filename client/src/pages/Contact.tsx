@@ -82,6 +82,34 @@ export default function Contact() {
                       </p>
                     </div>
                   </div>
+
+                  {/* Line Official Account */}
+                  <div className="pt-6 border-t border-border mt-2">
+                    <div className="flex items-start gap-4 bg-[#06C755]/10 p-4 rounded-xl">
+                      <div className="shrink-0">
+                        <img 
+                          src="/images/line_qr.png" 
+                          alt="Line Official Account QR Code" 
+                          className="w-24 h-24 object-contain rounded-lg border border-border bg-white"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="font-bold mb-1 text-[#06C755] flex items-center gap-2">
+                          官方 LINE 帳號
+                        </h3>
+                        <p className="text-sm text-muted-foreground mb-3">
+                          加入好友，立即享有專屬客服與最新優惠資訊！
+                        </p>
+                        <Button 
+                          variant="outline" 
+                          className="h-8 text-xs border-[#06C755] text-[#06C755] hover:bg-[#06C755] hover:text-white"
+                          onClick={() => window.open('https://line.me', '_blank')}
+                        >
+                          加入好友
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
