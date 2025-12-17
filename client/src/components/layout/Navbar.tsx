@@ -29,16 +29,11 @@ export function Navbar() {
                 <img 
                   src="/images/logo.jpeg" 
                   alt="椅件鍾情 Logo" 
-                  className="w-14 h-14 object-contain mix-blend-multiply" 
+                  className="w-12 h-12 object-contain mix-blend-multiply" 
                 />
-                <div className="flex flex-col">
-                  <span className="text-2xl font-display font-bold tracking-tight text-[#2c3e32] leading-none">
-                    椅件鍾情
-                  </span>
-                  <span className="text-[10px] text-[#5c7c64] tracking-[0.15em] font-medium uppercase mt-0.5">
-                    Growth Seat
-                  </span>
-                </div>
+                <span className="text-2xl font-display font-bold tracking-tight text-[#2c3e32]">
+                  椅件鍾情
+                </span>
               </a>
             </Link>
 
