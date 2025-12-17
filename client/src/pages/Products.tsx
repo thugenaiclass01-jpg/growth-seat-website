@@ -1,15 +1,30 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { SlidersHorizontal, ArrowRight, ShoppingBag } from "lucide-react";
+import { SlidersHorizontal, ArrowRight, ShoppingBag, X } from "lucide-react";
 import { Link } from "wouter";
 import { products } from "@/lib/products";
 import { useCartStore } from "@/lib/cartStore";
 import { useToast } from "@/hooks/use-toast";
+import { useState, useMemo } from "react";
+import { cn } from "@/lib/utils";
 
 export default function Products() {
   const { addItem } = useCartStore();
   const { toast } = useToast();
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  // Extract unique categories
+  const categories = useMemo(() => {
+    const cats = new Set(products.map(p => p.category));
+    return Array.from(cats);
+  }, []);
+
+  // Filter products
+  const filteredProducts = useMemo(() => {
+    if (!selectedCategory) return products;
+    return products.filter(p => p.category === selectedCategory);
+  }, [selectedCategory]);
 
   const handleQuickAdd = (e: React.MouseEvent, product: any) => {
     e.preventDefault(); 
@@ -35,17 +50,40 @@ export default function Products() {
             </div>
           </div>
 
-          <div className="flex justify-between items-center mb-6 sticky top-20 bg-background/95 backdrop-blur py-4 z-10 border-b border-border">
-            <p className="font-bold text-sm text-muted-foreground">{products.length} 個產品</p>
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 sticky top-20 bg-background/95 backdrop-blur py-4 z-10 border-b border-border gap-4">
             
-            <Button variant="outline" size="sm" className="gap-2 rounded-full border-2 font-bold hover:bg-secondary">
-              <SlidersHorizontal className="w-4 h-4" />
-              篩選
-            </Button>
+            {/* Category Filter Pills */}
+            <div className="flex flex-wrap gap-2 items-center">
+              <Button 
+                variant={selectedCategory === null ? "default" : "outline"}
+                size="sm"
+                className="rounded-full font-bold"
+                onClick={() => setSelectedCategory(null)}
+              >
+                全部
+              </Button>
+              {categories.map(cat => (
+                <Button
+                  key={cat}
+                  variant={selectedCategory === cat ? "default" : "outline"}
+                  size="sm"
+                  className="rounded-full font-bold"
+                  onClick={() => setSelectedCategory(cat)}
+                >
+                  {cat}
+                </Button>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-4 ml-auto">
+              <p className="font-bold text-sm text-muted-foreground whitespace-nowrap">
+                {filteredProducts.length} 個產品
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
-            {products.map((product) => (
+            {filteredProducts.map((product) => (
               <Link key={product.id} href={`/product/${product.id}`}>
                 <a className="group block h-full flex flex-col">
                   {/* Image - Boxy Container */}
@@ -84,7 +122,7 @@ export default function Products() {
                     
                     <div className="mt-auto flex items-baseline gap-1">
                       <span className="text-xs font-bold align-top">NT$</span>
-                      <span className="text-2xl font-black">{product.price}</span>
+                      <span className="text-2xl font-black">{product.price.toLocaleString()}</span>
                     </div>
                   </div>
                 </a>
