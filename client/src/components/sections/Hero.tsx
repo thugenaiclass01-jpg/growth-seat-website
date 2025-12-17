@@ -30,7 +30,7 @@ export function Hero() {
             </div>
             <h1 className="text-5xl lg:text-6xl font-display font-black leading-[0.9] mb-6 text-foreground tracking-tighter">
               好椅子，<br />
-              好生活。
+              可以陪伴你很久。
             </h1>
             <p className="text-lg text-foreground/80 mb-8 max-w-md font-medium leading-relaxed">
               模組化設計讓家具更長壽。零件可替換、可維修，這是我們對地球的承諾，也是給您的保證。
