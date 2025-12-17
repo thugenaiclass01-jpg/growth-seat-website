@@ -24,8 +24,8 @@
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
   
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Space Grotesk', sans-serif;
+  --font-sans: 'Noto Sans TC', 'Inter', sans-serif;
+  --font-display: 'Noto Sans TC', 'Inter', sans-serif;
   
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
@@ -33,78 +33,79 @@
 }
 
 :root {
-  /* Earthy, Sustainable, Clean Palette */
+  /* IKEA-inspired Palette */
   
-  /* Background: Soft warm white/beige */
-  --background: 40 20% 97%;
-  /* Foreground: Deep earthy charcoal */
-  --foreground: 150 10% 15%;
+  /* Background: Clean White */
+  --background: 0 0% 100%;
+  /* Foreground: High Contrast Black/Dark Gray */
+  --foreground: 0 0% 7%;
 
-  /* Card: Slightly lighter/white */
+  /* Card: White */
   --card: 0 0% 100%;
-  --card-foreground: 150 10% 15%;
+  --card-foreground: 0 0% 7%;
 
   /* Popover */
   --popover: 0 0% 100%;
-  --popover-foreground: 150 10% 15%;
+  --popover-foreground: 0 0% 7%;
 
-  /* Primary: Deep Forest Green */
-  --primary: 150 40% 30%;
-  --primary-foreground: 40 20% 97%;
+  /* Primary: IKEA Blue (Action/Brand) */
+  --primary: 208 100% 32%; /* #0058a3 */
+  --primary-foreground: 0 0% 100%;
 
-  /* Secondary: Raw Wood / Cardboard */
-  --secondary: 35 30% 85%;
-  --secondary-foreground: 30 40% 20%;
+  /* Secondary: Light Gray (Backgrounds) */
+  --secondary: 0 0% 96%; /* #f5f5f5 */
+  --secondary-foreground: 0 0% 7%;
 
-  /* Muted: Soft Grey-Green */
-  --muted: 150 10% 92%;
-  --muted-foreground: 150 10% 40%;
+  /* Muted: Medium Gray */
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 40%;
 
-  /* Accent: Technical/Industrial Orange (for highlights) */
-  --accent: 25 80% 60%;
-  --accent-foreground: 0 0% 100%;
+  /* Accent: IKEA Yellow (Highlight/Badges) */
+  --accent: 52 100% 50%; /* #ffdb00 */
+  --accent-foreground: 208 100% 32%; /* Blue text on yellow */
 
   /* Destructive */
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
 
   /* Borders & Input */
-  --border: 150 10% 85%;
-  --input: 150 10% 85%;
-  --ring: 150 40% 30%;
+  --border: 0 0% 89.8%;
+  --input: 0 0% 89.8%;
+  --ring: 208 100% 32%;
 
-  --radius: 0.5rem;
+  /* Radius: Boxier feel */
+  --radius: 0rem; 
 }
 
 .dark {
-  /* Dark Mode: Deep Mossy Night */
-  --background: 150 20% 10%;
-  --foreground: 40 20% 90%;
+  /* Dark Mode Adaptation */
+  --background: 0 0% 7%;
+  --foreground: 0 0% 98%;
 
-  --card: 150 20% 13%;
-  --card-foreground: 40 20% 90%;
+  --card: 0 0% 7%;
+  --card-foreground: 0 0% 98%;
 
-  --popover: 150 20% 13%;
-  --popover-foreground: 40 20% 90%;
+  --popover: 0 0% 7%;
+  --popover-foreground: 0 0% 98%;
 
-  --primary: 150 40% 40%;
+  --primary: 208 100% 45%; /* Lighter blue for dark mode */
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 150 20% 20%;
-  --secondary-foreground: 40 20% 90%;
+  --secondary: 0 0% 15%;
+  --secondary-foreground: 0 0% 98%;
 
-  --muted: 150 20% 20%;
-  --muted-foreground: 150 10% 60%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 65%;
 
-  --accent: 25 80% 60%;
-  --accent-foreground: 0 0% 100%;
+  --accent: 52 100% 50%;
+  --accent-foreground: 208 100% 32%;
 
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
 
-  --border: 150 20% 20%;
-  --input: 150 20% 20%;
-  --ring: 150 40% 40%;
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  --ring: 208 100% 45%;
 }
 
 @layer base {
@@ -115,6 +116,6 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-tight;
+    @apply font-display tracking-tight font-bold;
   }
 }

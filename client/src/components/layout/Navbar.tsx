@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Menu, X, ShoppingBag } from "lucide-react";
+import { Menu, X, ShoppingBag, Search } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -11,36 +11,49 @@ export function Navbar() {
   const cartCount = useCartStore((state) => state.count());
 
   const links = [
-    { href: "/", label: "首頁" },
-    { href: "/products", label: "所有椅款" },
+    { href: "/products", label: "所有商品" },
+    { href: "/products", label: "空間佈置靈感" }, // Mock links for IKEA feel
+    { href: "/products", label: "新品推薦" },
     { href: "/about", label: "關於我們" },
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        {/* Logo */}
+    <nav className="w-full bg-background border-b border-border">
+      {/* Top Utility Bar (IKEA style often has a small top bar, we can simplify or omit, let's keep it clean) */}
+      
+      {/* Main Nav */}
+      <div className="container mx-auto px-4 h-20 flex items-center justify-between gap-8">
+        {/* Logo - Bold Blue */}
         <Link href="/">
-          <a className="font-display font-bold text-xl tracking-tight text-primary flex items-center gap-2">
-            <span className="w-8 h-8 rounded-sm bg-primary text-primary-foreground flex items-center justify-center text-lg font-bold">
-              椅
-            </span>
-            椅件鍾情
+          <a className="flex-shrink-0">
+             {/* Text Logo mimicking IKEA box logo style */}
+            <div className="bg-primary text-primary-foreground font-display font-black text-2xl tracking-tighter px-4 py-1 select-none">
+              IKEA-ISH
+            </div> 
+            {/* Or keep original name but styled */}
+            {/* <div className="font-display font-black text-3xl tracking-tighter text-primary">
+              椅件鍾情
+            </div> */}
           </a>
         </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
-            <Link key={link.href} href={link.href}>
-              <a
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary",
-                  location === link.href
-                    ? "text-primary font-semibold"
-                    : "text-muted-foreground"
-                )}
-              >
+        {/* Search Bar - Prominent in IKEA style */}
+        <div className="hidden md:flex flex-1 max-w-xl relative">
+          <input 
+            type="text" 
+            placeholder="搜尋產品..." 
+            className="w-full pl-4 pr-10 py-3 rounded-full bg-secondary border-none focus:ring-2 focus:ring-primary/20 transition-all outline-none"
+          />
+          <button className="absolute right-3 top-1/2 -translate-y-1/2 p-1.5 bg-primary rounded-full text-white hover:bg-primary/90 transition-colors">
+            <Search className="w-4 h-4" />
+          </button>
+        </div>
+
+        {/* Desktop Nav Links */}
+        <div className="hidden lg:flex items-center gap-6">
+          {links.map((link, idx) => (
+            <Link key={idx} href={link.href}>
+              <a className="text-sm font-bold text-foreground hover:underline underline-offset-4 decoration-2">
                 {link.label}
               </a>
             </Link>
@@ -48,34 +61,24 @@ export function Navbar() {
         </div>
 
         {/* Actions */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="flex items-center gap-2 md:gap-4">
           <Link href="/cart">
-            <Button variant="ghost" size="icon" className="relative">
+            <Button variant="ghost" size="icon" className="relative hover:bg-secondary rounded-full w-10 h-10">
               <ShoppingBag className="w-5 h-5" />
               {cartCount > 0 && (
-                <span className="absolute top-1 right-1 w-4 h-4 bg-accent text-[10px] text-accent-foreground font-bold rounded-full flex items-center justify-center animate-in zoom-in">
+                <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-[10px] text-accent-foreground font-bold rounded-full flex items-center justify-center animate-in zoom-in border border-background">
                   {cartCount}
                 </span>
               )}
             </Button>
           </Link>
-          <Button variant="outline" size="sm">登入會員</Button>
-        </div>
-
-        {/* Mobile Menu Toggle */}
-        <div className="flex items-center gap-4 md:hidden">
-          <Link href="/cart">
-            <Button variant="ghost" size="icon" className="relative">
-              <ShoppingBag className="w-5 h-5" />
-              {cartCount > 0 && (
-                <span className="absolute top-1 right-1 w-4 h-4 bg-accent text-[10px] text-accent-foreground font-bold rounded-full flex items-center justify-center">
-                  {cartCount}
-                </span>
-              )}
-            </Button>
-          </Link>
+          <Button variant="ghost" className="hidden md:flex font-bold rounded-full hover:bg-secondary">
+            登入 / 註冊
+          </Button>
+          
+          {/* Mobile Menu Toggle */}
           <button
-            className="p-2"
+            className="md:hidden p-2"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X /> : <Menu />}
@@ -85,19 +88,27 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-16 left-0 w-full bg-background border-b border-border p-4 flex flex-col gap-4 shadow-lg animate-in slide-in-from-top-5">
-          {links.map((link) => (
-            <Link key={link.href} href={link.href}>
+        <div className="md:hidden absolute top-20 left-0 w-full bg-background border-b border-border p-4 flex flex-col gap-4 shadow-xl z-50">
+          <div className="relative mb-4">
+             <input 
+              type="text" 
+              placeholder="搜尋產品..." 
+              className="w-full pl-4 pr-10 py-3 rounded-full bg-secondary border-none outline-none"
+            />
+             <Search className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+          </div>
+          {links.map((link, idx) => (
+            <Link key={idx} href={link.href}>
               <a
-                className="block text-lg font-medium py-2"
+                className="block text-lg font-bold py-3 border-b border-border/50"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
               </a>
             </Link>
           ))}
-          <div className="border-t pt-4 mt-2 flex gap-4">
-            <Button className="w-full">登入</Button>
+          <div className="pt-4 flex gap-4">
+            <Button className="w-full rounded-full font-bold">登入</Button>
           </div>
         </div>
       )}

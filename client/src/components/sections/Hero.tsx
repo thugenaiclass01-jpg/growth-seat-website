@@ -6,62 +6,49 @@ import heroImage from "@assets/IMG_1501_1765956915525.jpeg";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-secondary/20 py-20 lg:py-32">
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="relative w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-3 min-h-[600px] lg:h-[75vh]">
+        {/* Image Side - Takes up 2/3 on desktop for that big impact */}
+        <div className="lg:col-span-2 relative h-[50vh] lg:h-full bg-secondary/30">
+          <img 
+            src={heroImage} 
+            alt="Living room setup" 
+            className="w-full h-full object-cover"
+          />
+           {/* Overlay Gradient for mobile text readability if needed, but we keep text separate for IKEA style */}
+        </div>
+
+        {/* Content Side - Clean White Box */}
+        <div className="lg:col-span-1 bg-background p-8 lg:p-16 flex flex-col justify-center items-start border-l border-border">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-block px-3 py-1 mb-6 text-xs font-semibold tracking-wider text-primary uppercase bg-primary/10 rounded-full">
-              台灣在地製造 · 永續家具首選
+            <div className="font-bold text-accent-foreground bg-accent inline-block px-3 py-1 mb-6 text-sm">
+              新品上市
             </div>
-            <h1 className="text-4xl md:text-6xl font-display font-bold leading-[1.1] mb-6 text-foreground">
+            <h1 className="text-5xl lg:text-6xl font-display font-black leading-[0.9] mb-6 text-foreground tracking-tighter">
               好椅子，<br />
-              可以陪伴你很久。
+              好生活。
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
-              我們重新定義了家具的壽命。模組化設計、可替換零件，讓你的椅子不僅環保，更經久耐用。
+            <p className="text-lg text-foreground/80 mb-8 max-w-md font-medium leading-relaxed">
+              模組化設計讓家具更長壽。零件可替換、可維修，這是我們對地球的承諾，也是給您的保證。
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/products">
-                <Button size="lg" className="gap-2 text-base">
-                  瀏覽所有椅款 <ArrowRight className="w-4 h-4" />
-                </Button>
-              </Link>
-              <Link href="/about">
-                <Button variant="outline" size="lg" className="text-base">
-                  了解我們的理念
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
+            
+            <Link href="/products">
+              <Button size="lg" className="rounded-full px-8 h-14 text-lg font-bold bg-foreground text-background hover:bg-foreground/80">
+                立即選購 <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-              <img 
-                src={heroImage} 
-                alt="Modern sustainable chair in a living room" 
-                className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            {/* Floating Badge */}
-            <div className="absolute -bottom-6 -left-6 bg-background p-6 rounded-xl shadow-xl border border-border hidden md:block">
-              <p className="font-display font-bold text-2xl text-primary">NT$ 3,200 起</p>
-              <p className="text-sm text-muted-foreground">平價享受設計質感</p>
+            <div className="mt-12 pt-8 border-t border-border w-full">
+              <p className="font-bold text-3xl mb-1">NT$ 3,200 <span className="text-sm font-normal align-top">起</span></p>
+              <p className="text-sm text-muted-foreground">綠意舒適扶手椅</p>
             </div>
           </motion.div>
         </div>
       </div>
-      
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-secondary/40 to-transparent -z-10" />
     </section>
   );
 }
