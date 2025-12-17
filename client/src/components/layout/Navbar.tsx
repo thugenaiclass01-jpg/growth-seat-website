@@ -27,10 +27,14 @@ export function Navbar() {
         <Link href="/">
           <a className="flex-shrink-0">
              {/* Text Logo mimicking IKEA box logo style */}
-            <div className="bg-primary px-5 py-2 relative">
-               <div className="bg-accent rounded-[50%] px-6 py-1">
-                 <span className="text-primary font-black tracking-tight text-xl">椅件鍾情</span>
-               </div>
+            <div className="flex flex-col leading-none font-black select-none group cursor-pointer">
+              <div className="flex gap-1">
+                <span className="bg-primary text-white px-2 py-1 rounded-sm shadow-sm transform group-hover:-translate-y-0.5 transition-transform duration-300">椅</span>
+                <span className="bg-accent text-primary px-2 py-1 rounded-sm shadow-sm transform group-hover:translate-y-0.5 transition-transform duration-300">件</span>
+              </div>
+              <div className="text-primary text-right text-sm font-bold tracking-[0.2em] border-t-2 border-primary mt-1 pt-0.5">
+                鍾情
+              </div>
             </div> 
             {/* Or keep original name but styled */}
             {/* <div className="font-display font-black text-3xl tracking-tighter text-primary">
