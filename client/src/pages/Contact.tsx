@@ -103,7 +103,7 @@ export default function Contact() {
                         <Button 
                           variant="outline" 
                           className="h-8 text-xs border-[#06C755] text-[#06C755] hover:bg-[#06C755] hover:text-white"
-                          onClick={() => window.open('https://line.me', '_blank')}
+                          onClick={() => window.open('https://page.line.me/958okryn', '_blank')}
                         >
                           加入好友
                         </Button>
