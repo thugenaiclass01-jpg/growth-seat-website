@@ -28,7 +28,7 @@ export function Navbar() {
           <a className="flex-shrink-0">
              {/* Text Logo mimicking IKEA box logo style */}
             <div className="bg-primary text-primary-foreground font-display font-black text-2xl tracking-tighter px-4 py-1 select-none">
-              IKEA-ISH
+              椅件鍾情
             </div> 
             {/* Or keep original name but styled */}
             {/* <div className="font-display font-black text-3xl tracking-tighter text-primary">
