@@ -54,7 +54,7 @@ export function Footer() {
 
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-muted-foreground">
-            © 2025 椅件鍾情股份有限公司. All rights reserved.
+            © 2025 椅件鍾情股份有限公司. All rights reserved. Made in Taiwan.
           </p>
           <div className="flex gap-4 text-xs text-muted-foreground">
             <a href="#" className="hover:text-foreground">隱私權政策</a>
