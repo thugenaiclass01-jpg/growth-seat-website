@@ -17,20 +17,20 @@ export function Footer() {
           <div>
             <h4 className="font-bold mb-4">產品系列</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/products"><a className="hover:text-primary transition-colors">家用系列</a></Link></li>
-              <li><Link href="/products"><a className="hover:text-primary transition-colors">辦公系列</a></Link></li>
-              <li><Link href="/products"><a className="hover:text-primary transition-colors">咖啡廳系列</a></Link></li>
-              <li><Link href="/products"><a className="hover:text-primary transition-colors">零件與配件</a></Link></li>
+              <li><Link href="/products" className="hover:text-primary transition-colors">家用系列</Link></li>
+              <li><Link href="/products" className="hover:text-primary transition-colors">辦公系列</Link></li>
+              <li><Link href="/products" className="hover:text-primary transition-colors">咖啡廳系列</Link></li>
+              <li><Link href="/products" className="hover:text-primary transition-colors">零件與配件</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold mb-4">關於我們</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/about"><a className="hover:text-primary transition-colors">品牌故事</a></Link></li>
-              <li><Link href="/about"><a className="hover:text-primary transition-colors">永續理念</a></Link></li>
-              <li><Link href="/contact"><a className="hover:text-primary transition-colors">聯絡我們</a></Link></li>
-              <li><Link href="/faq"><a className="hover:text-primary transition-colors">常見問題</a></Link></li>
+              <li><Link href="/about" className="hover:text-primary transition-colors">品牌故事</Link></li>
+              <li><Link href="/about" className="hover:text-primary transition-colors">永續理念</Link></li>
+              <li><Link href="/contact" className="hover:text-primary transition-colors">聯絡我們</Link></li>
+              <li><Link href="/faq" className="hover:text-primary transition-colors">常見問題</Link></li>
             </ul>
           </div>
 

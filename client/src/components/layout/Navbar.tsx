@@ -24,8 +24,7 @@ export function Navbar() {
       {/* Main Nav */}
       <div className="container mx-auto px-4 h-20 flex items-center justify-between gap-8">
         {/* Logo - Bold Blue */}
-            <Link href="/">
-              <a className="flex items-center gap-3 group">
+            <Link href="/" className="flex items-center gap-3 group">
                 <img 
                   src="/images/logo.jpeg" 
                   alt="椅件鍾情 Logo" 
@@ -34,7 +33,6 @@ export function Navbar() {
                 <span className="text-2xl font-display font-bold tracking-tight text-[#2c3e32]">
                   椅件鍾情
                 </span>
-              </a>
             </Link>
 
         {/* Search Bar - Prominent in IKEA style */}
@@ -52,10 +50,8 @@ export function Navbar() {
         {/* Desktop Nav Links */}
         <div className="hidden lg:flex items-center gap-6">
           {links.map((link, idx) => (
-            <Link key={idx} href={link.href}>
-              <a className="text-sm font-bold text-foreground hover:underline underline-offset-4 decoration-2">
+            <Link key={idx} href={link.href} className="text-sm font-bold text-foreground hover:underline underline-offset-4 decoration-2">
                 {link.label}
-              </a>
             </Link>
           ))}
         </div>
@@ -98,13 +94,8 @@ export function Navbar() {
              <Search className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           </div>
           {links.map((link, idx) => (
-            <Link key={idx} href={link.href}>
-              <a
-                className="block text-lg font-bold py-3 border-b border-border/50"
-                onClick={() => setIsOpen(false)}
-              >
+            <Link key={idx} href={link.href} className="block text-lg font-bold py-3 border-b border-border/50" onClick={() => setIsOpen(false)}>
                 {link.label}
-              </a>
             </Link>
           ))}
           <div className="pt-4 flex gap-4">
