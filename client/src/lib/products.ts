@@ -41,7 +41,7 @@ export const products: Product[] = [
   {
     id: 1,
     name: "綠意舒適扶手椅 - The Green",
-    price: 3200,
+    price: 12800,
     category: "客廳系列",
     description: "經典的綠色布面扶手椅，為您的客廳增添一抹自然的寧靜。厚實的坐墊提供極致的舒適感，適合閱讀或午後小憩。",
     image: imgGreenArmchair,
@@ -55,7 +55,7 @@ export const products: Product[] = [
   {
     id: 2,
     name: "經典米色單人沙發 - The Cozy",
-    price: 3500,
+    price: 14500,
     category: "客廳系列",
     description: "溫暖的米色調，搭配簡約的線條設計。這款單人沙發是現代居家風格的百搭單品，讓家更顯溫馨。",
     image: imgBeigeArmchair,
@@ -71,7 +71,7 @@ export const products: Product[] = [
   {
     id: 3,
     name: "主管級皮革辦公椅 - Executive",
-    price: 4500,
+    price: 18800,
     category: "辦公系列",
     description: "採用優質合成皮革，觸感柔軟細膩。加厚頭枕與腰靠設計，支撐您一整天的工作需求，展現專業氣度。",
     image: imgOfficeLeather,
@@ -85,7 +85,7 @@ export const products: Product[] = [
   {
     id: 4,
     name: "透氣網布人體工學椅 - Air Flow",
-    price: 2800,
+    price: 8800,
     category: "辦公系列",
     description: "全網布設計，通風透氣不悶熱。簡約俐落的造型，適合現代辦公室或居家書房使用。",
     image: imgOfficeMesh,
@@ -100,7 +100,7 @@ export const products: Product[] = [
   {
     id: 5,
     name: "北歐風簡約餐椅 - Nordic White",
-    price: 950,
+    price: 3200,
     category: "餐廳系列",
     description: "經典的北歐風格，白色椅面搭配淺色木腳，清新自然。適合搭配各種風格的餐桌。",
     image: imgWhiteDining,
@@ -114,7 +114,7 @@ export const products: Product[] = [
   {
     id: 6,
     name: "溫暖黃餐椅 - Nordic Yellow",
-    price: 950,
+    price: 3200,
     category: "餐廳系列",
     description: "為餐廳注入活力的亮黃色。人體工學弧形椅背，提供良好的背部支撐。",
     image: imgYellowDining,
@@ -127,7 +127,7 @@ export const products: Product[] = [
   {
     id: 7,
     name: "實木格柵餐椅 - The Slat",
-    price: 1800,
+    price: 6800,
     category: "餐廳系列",
     description: "傳統格柵椅背設計的現代詮釋。全實木製作，質感溫潤，堅固耐用。",
     image: imgWoodSlatted,
@@ -140,7 +140,7 @@ export const products: Product[] = [
   {
     id: 8,
     name: "曲木造型椅 - The Circle",
-    price: 2100,
+    price: 7500,
     category: "餐廳系列",
     description: "獨特的圓孔椅背設計，展現曲木工藝之美。不僅是椅子，更是空間中的藝術品。",
     image: imgWoodHole,
@@ -153,7 +153,7 @@ export const products: Product[] = [
   {
     id: 9,
     name: "復古紅造型椅 - Retro Red",
-    price: 1200,
+    price: 4200,
     category: "商業空間",
     description: "搶眼的紅色，適合商業空間或想要打造焦點的居家角落。耐用易保養。",
     image: imgRedHole,
@@ -166,7 +166,7 @@ export const products: Product[] = [
   {
     id: 10,
     name: "精緻布面餐椅 - Green Fabric",
-    price: 1600,
+    price: 5600,
     category: "餐廳系列",
     description: "結合了曲木造型與舒適布面。綠色織紋布料帶來沉穩的氣質。",
     image: imgGreenUph,
@@ -181,7 +181,7 @@ export const products: Product[] = [
   {
     id: 11,
     name: "戶外編織休閒椅 - Rattan Beige",
-    price: 2500,
+    price: 8500,
     category: "戶外系列",
     description: "手工編織的戶外椅，抗UV材質，不怕日曬雨淋。附贈舒適抱枕，是庭院放鬆的最佳夥伴。",
     image: imgBeigeRope,
@@ -195,7 +195,7 @@ export const products: Product[] = [
   {
     id: 12,
     name: "極簡白戶外椅 - White Line",
-    price: 1500,
+    price: 4800,
     category: "戶外系列",
     description: "極簡線條設計，輕盈且現代。特殊的防鏽塗層，適合台灣潮濕的氣候。",
     image: imgWhiteMetal,
@@ -208,7 +208,7 @@ export const products: Product[] = [
   {
     id: 13,
     name: "現代編織椅 - Grey Rope",
-    price: 2800,
+    price: 9200,
     category: "戶外系列",
     description: "寬大的座面設計，使用加粗編織繩，支撐性更佳。木質扶手增添溫潤觸感。",
     image: imgGreyRope,
@@ -223,7 +223,7 @@ export const products: Product[] = [
   {
     id: 14,
     name: "未來感曲線椅 - The Wave",
-    price: 5600,
+    price: 22000,
     category: "設計師系列",
     description: "一體成型的流線設計，挑戰工藝極限。不僅是椅子，更是空間中的雕塑。",
     image: imgModernWhiteCurve,
@@ -237,7 +237,7 @@ export const products: Product[] = [
   {
     id: 15,
     name: "無限迴圈椅 - Infinity Wood",
-    price: 6200,
+    price: 26800,
     category: "設計師系列",
     description: "獨特的迴圈造型，展現木材的韌性與美感。每一個角度都充滿驚喜。",
     image: imgModernWoodLoop,
@@ -250,7 +250,7 @@ export const products: Product[] = [
    {
     id: 16,
     name: "幾何方塊椅 - Cube Wood",
-    price: 4800,
+    price: 16500,
     category: "設計師系列",
     description: "以幾何方塊為靈感，中空的設計減輕了視覺重量，卻不失穩重。",
     image: imgModernSquareWood,
@@ -263,7 +263,7 @@ export const products: Product[] = [
    {
     id: 17,
     name: "旋轉曲線椅 - Swivel Curve",
-    price: 5200,
+    price: 19800,
     category: "設計師系列",
     description: "結合了曲線美學與旋轉機能。金屬底座提供穩定的支撐，椅身線條優雅流暢。",
     image: imgModernPlywoodSwivel,
